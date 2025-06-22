@@ -164,7 +164,6 @@ class CytokinesisAnalyzer:
         plt.title('Cell Closure Over Time')
         plt.legend()
         plt.savefig(output_dir / 'closures.png')
-        plt.close()
 
         # Create individual speed vs closure plots for each file
         for file_name, data in self.results.items():
@@ -231,9 +230,12 @@ def main():
     })
     
     for file_name, data in results.items():
+        # Filter out NaN values from speeds before calculating max
+        valid_speeds = [s for s in data['speeds'] if not np.isnan(s)]
+        
         summary_df = summary_df.append({
             'file': file_name,
-            'max_speed': max(data['speeds']),
+            'max_speed': max(valid_speeds) if valid_speeds else np.nan,
             'max_closure': max(data['closures']),
             'time_to_closure': data['times'][np.argmax(data['closures'])]
         }, ignore_index=True)
