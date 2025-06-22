@@ -13,11 +13,10 @@ If the mp4 file is unplayable in the browser, clicking the thumbnail will direct
 [![2-D Cytokinesis Visualization](data/cytosim-simulation-thumbnail.png)](https://github.com/gordon-b-max/CytokinesisAnalytics/blob/main/2dCellularClosureExample.mp4)
 
 ## Features
-- Ellipse fitting to cell boundaries
+- Ellipse fitting of cell boundaries
 - Calculation of closure percentages and speeds
-- Automated analysis of multuple simulation files
-- Visualization of key metrics
-- Statistical analysis of results
+- Automated analysis of multiple simulation files
+- Visualization of key metrics per simulation
 
 
 ## Sample Results
